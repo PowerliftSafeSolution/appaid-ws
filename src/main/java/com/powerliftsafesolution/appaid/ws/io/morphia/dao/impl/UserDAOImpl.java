@@ -9,16 +9,21 @@ import org.mongodb.morphia.Datastore;
 import org.mongodb.morphia.dao.BasicDAO;
 import org.mongodb.morphia.query.Query;
 import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+@Repository
 public class UserDAOImpl extends BasicDAO<UserEntity, ObjectId> implements UserDAO {
 
+    @Autowired
     private IOUtils ioUtils;
 
-    public UserDAOImpl(Class<UserEntity> entityClass, Datastore datastore){
-        super(entityClass, datastore);
-        ioUtils = new IOUtils();
+    @Autowired
+    public UserDAOImpl(Datastore datastore){
+        super(UserEntity.class, datastore);
     }
 
     @Override
@@ -112,6 +117,19 @@ public class UserDAOImpl extends BasicDAO<UserEntity, ObjectId> implements UserD
         List<UserDTO> userDTOS = null;
 
         Query<UserEntity> query = createQuery().field("role").equal(role);
+        List<UserEntity> userEntities = query.asList();
+
+        if(userEntities != null){
+            userDTOS = ioUtils.copyToUserDTOList(userEntities);
+        }
+        return userDTOS;
+    }
+
+    @Override
+    public List<UserDTO> getByJobTitle(String jobTitle) {
+        List<UserDTO> userDTOS = null;
+
+        Query<UserEntity> query = createQuery().field("jobTitle").equal(jobTitle);
         List<UserEntity> userEntities = query.asList();
 
         if(userEntities != null){

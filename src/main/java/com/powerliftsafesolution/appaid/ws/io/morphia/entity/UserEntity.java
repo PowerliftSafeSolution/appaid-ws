@@ -18,6 +18,10 @@ public class UserEntity {
     private String encryptedPassword;
     private String role;
     private int employeeId;
+    private String token;
+    private String tokenSalt;
+    private String gender;
+    private String jobTitle;
 
     public UserEntity(){}
 
@@ -91,5 +95,37 @@ public class UserEntity {
 
     public void setEmployeeId(int employeeId) {
         this.employeeId = employeeId;
+    }
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
+    }
+
+    public String getTokenSalt() {
+        return tokenSalt;
+    }
+
+    public void setTokenSalt(String tokenSalt) {
+        this.tokenSalt = tokenSalt;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public String getJobTitle() {
+        return jobTitle;
+    }
+
+    public void setJobTitle(String jobTitle) {
+        this.jobTitle = jobTitle;
     }
 }

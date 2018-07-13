@@ -3,6 +3,7 @@ package com.powerliftsafesolution.appaid.ws.io.morphia.dao;
 import com.powerliftsafesolution.appaid.ws.io.morphia.entity.UserEntity;
 import com.powerliftsafesolution.appaid.ws.shared.dto.UserDTO;
 import org.bson.types.ObjectId;
+import org.mongodb.morphia.UpdateOptions;
 import org.mongodb.morphia.dao.DAO;
 
 import java.util.List;
@@ -22,4 +23,6 @@ public interface UserDAO extends DAO<UserEntity, ObjectId> {
     List<UserDTO> getByLastName(String lastName);
 
     List<UserDTO> getByRole(String role);
+
+    List<UserDTO> getByJobTitle(String jobTitle);
 }

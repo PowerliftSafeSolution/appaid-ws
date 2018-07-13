@@ -15,6 +15,6 @@ public class AuthenticationFailExceptionMapper implements ExceptionMapper<Authen
         ErrorMessageResponseModel errorMessageResponseModel = new ErrorMessageResponseModel(exception.getMessage(),
                 ErrorMessages.AUTHENTICATION_FAILED.name());
 
-        return Response.status(Response.Status.BAD_REQUEST).entity(errorMessageResponseModel).build();
+        return Response.status(Response.Status.UNAUTHORIZED).entity(errorMessageResponseModel).build();
     }
 }

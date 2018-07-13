@@ -12,6 +12,8 @@ public class UserProfileResponseModel {
     private String userName;
     private String role;
     private int employeeId;
+    private String gender;
+    private String jobTitle;
 
     public String getFirstName() {
         return firstName;
@@ -67,5 +69,21 @@ public class UserProfileResponseModel {
 
     public void setEmployeeId(int employeeId) {
         this.employeeId = employeeId;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public String getJobTitle() {
+        return jobTitle;
+    }
+
+    public void setJobTitle(String jobTitle) {
+        this.jobTitle = jobTitle;
     }
 }
