@@ -7,17 +7,19 @@ import org.mongodb.morphia.Morphia;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 
 @Configuration
+@PropertySource("classpath:mongodb-appaid-live.properties")
 public class MorphiaConfig {
 
-    @Value("${appaid.username}")
+    @Value("${mongodb.username}")
     private String userName;
-    @Value("${appaid.password}")
+    @Value("${mongodb.password}")
     private String password;
-    @Value("${appaid.dbUrl}")
+    @Value("${mongodb.dbUrl}")
     private String dbUrl;
-    @Value("${appaid.dbName}")
+    @Value("${mongodb.dbName}")
     private String dbName;
 
     public MorphiaConfig() {

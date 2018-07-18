@@ -12,6 +12,7 @@ public class EmployeeIncidentReportEntity {
     private String typeOfIncident;
     private String employeeFirstName;
     private String employeeLastName;
+    private int employeeId;
     private String jobTitle;
     private String supervisorName;
     private boolean isIncidentReported;
@@ -22,7 +23,20 @@ public class EmployeeIncidentReportEntity {
     private String locationDetailedDescription;
     private String leadUpToInjury;
     private String possiblePreventions;
-    private String injuryLocationOnBody;
+    private String detailedDescriptionOfInjury;
+    private boolean injuryAbdomenLowerbackLumbarPelvis;
+    private boolean injuryHead;
+    private boolean injuryAnkleFoot;
+    private boolean injuryChest;
+    private boolean injuryHipThigh;
+    private boolean injuryKneeLowerleg;
+    private boolean injuryNeck;
+    private boolean injuryShoulderUpperarm;
+    private boolean injuryWristHand;
+    private boolean forkliftInvolved;
+    private String forkliftOperatorFirstName;
+    private String forkliftOperatorLastName;
+    private int forkliftOperatorEmployeeId;
     private String possibleInjury;
     private boolean doctorVisit;
     private String doctorName;
@@ -132,12 +146,12 @@ public class EmployeeIncidentReportEntity {
         this.possiblePreventions = possiblePreventions;
     }
 
-    public String getInjuryLocationOnBody() {
-        return injuryLocationOnBody;
+    public String getDetailedDescriptionOfInjury() {
+        return detailedDescriptionOfInjury;
     }
 
-    public void setInjuryLocationOnBody(String injuryLocationOnBody) {
-        this.injuryLocationOnBody = injuryLocationOnBody;
+    public void setDetailedDescriptionOfInjury(String detailedDescriptionOfInjury) {
+        this.detailedDescriptionOfInjury = detailedDescriptionOfInjury;
     }
 
     public String getPossibleInjury() {
@@ -234,5 +248,117 @@ public class EmployeeIncidentReportEntity {
 
     public void setEmployeeLastName(String employeeLastName) {
         this.employeeLastName = employeeLastName;
+    }
+
+    public boolean isInjuryAbdomenLowerbackLumbarPelvis() {
+        return injuryAbdomenLowerbackLumbarPelvis;
+    }
+
+    public void setInjuryAbdomenLowerbackLumbarPelvis(boolean injuryAbdomenLowerbackLumbarPelvis) {
+        this.injuryAbdomenLowerbackLumbarPelvis = injuryAbdomenLowerbackLumbarPelvis;
+    }
+
+    public boolean isInjuryHead() {
+        return injuryHead;
+    }
+
+    public void setInjuryHead(boolean injuryHead) {
+        this.injuryHead = injuryHead;
+    }
+
+    public boolean isInjuryAnkleFoot() {
+        return injuryAnkleFoot;
+    }
+
+    public void setInjuryAnkleFoot(boolean injuryAnkleFoot) {
+        this.injuryAnkleFoot = injuryAnkleFoot;
+    }
+
+    public boolean isInjuryChest() {
+        return injuryChest;
+    }
+
+    public void setInjuryChest(boolean injuryChest) {
+        this.injuryChest = injuryChest;
+    }
+
+    public boolean isInjuryHipThigh() {
+        return injuryHipThigh;
+    }
+
+    public void setInjuryHipThigh(boolean injuryHipThigh) {
+        this.injuryHipThigh = injuryHipThigh;
+    }
+
+    public boolean isInjuryKneeLowerleg() {
+        return injuryKneeLowerleg;
+    }
+
+    public void setInjuryKneeLowerleg(boolean injuryKneeLowerleg) {
+        this.injuryKneeLowerleg = injuryKneeLowerleg;
+    }
+
+    public boolean isInjuryNeck() {
+        return injuryNeck;
+    }
+
+    public void setInjuryNeck(boolean injuryNeck) {
+        this.injuryNeck = injuryNeck;
+    }
+
+    public boolean isInjuryShoulderUpperarm() {
+        return injuryShoulderUpperarm;
+    }
+
+    public void setInjuryShoulderUpperarm(boolean injuryShoulderUpperarm) {
+        this.injuryShoulderUpperarm = injuryShoulderUpperarm;
+    }
+
+    public boolean isInjuryWristHand() {
+        return injuryWristHand;
+    }
+
+    public void setInjuryWristHand(boolean injuryWristHand) {
+        this.injuryWristHand = injuryWristHand;
+    }
+
+    public boolean isForkliftInvolved() {
+        return forkliftInvolved;
+    }
+
+    public void setForkliftInvolved(boolean forkliftInvolved) {
+        this.forkliftInvolved = forkliftInvolved;
+    }
+
+    public String getForkliftOperatorFirstName() {
+        return forkliftOperatorFirstName;
+    }
+
+    public void setForkliftOperatorFirstName(String forkliftOperatorFirstName) {
+        this.forkliftOperatorFirstName = forkliftOperatorFirstName;
+    }
+
+    public String getForkliftOperatorLastName() {
+        return forkliftOperatorLastName;
+    }
+
+    public void setForkliftOperatorLastName(String forkliftOperatorLastName) {
+        this.forkliftOperatorLastName = forkliftOperatorLastName;
+    }
+
+    public int getForkliftOperatorEmployeeId() {
+        return forkliftOperatorEmployeeId;
+    }
+
+    public void setForkliftOperatorEmployeeId(int forkliftOperatorEmployeeId) {
+        this.forkliftOperatorEmployeeId = forkliftOperatorEmployeeId;
+    }
+
+    public int getEmployeeId() {
+        return employeeId;
+    }
+
+    public void setEmployeeId(int employeeId) {
+        this.employeeId = employeeId;
     }
 }

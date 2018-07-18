@@ -8,6 +8,7 @@ public class EmployeeIncidentSubmissionSuccessResponseModel {
     private String time;
     private String employeeFirstName;
     private String employeeLastName;
+    private String employeeId;
 
     public String getStatus() {
         return status;
@@ -55,5 +56,13 @@ public class EmployeeIncidentSubmissionSuccessResponseModel {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public String getEmployeeId() {
+        return employeeId;
+    }
+
+    public void setEmployeeId(String employeeId) {
+        this.employeeId = employeeId;
     }
 }
