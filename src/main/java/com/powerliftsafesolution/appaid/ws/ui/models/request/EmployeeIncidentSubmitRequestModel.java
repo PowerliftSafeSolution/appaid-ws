@@ -20,15 +20,23 @@ public class EmployeeIncidentSubmitRequestModel {
     private String leadUpToInjury;
     private String possiblePreventions;
     private String detailDescriptionOfInjury;
-    private boolean injuryAbdomenLowerbackLumbarPelvis;
+    private boolean injuryAbdomen;
+    private boolean injuryLowerback;
+    private boolean injuryLumbar;
+    private boolean injuryPelvis;
     private boolean injuryHead;
-    private boolean injuryAnkleFoot;
+    private boolean injuryAnkle;
+    private boolean injuryFoot;
     private boolean injuryChest;
-    private boolean injuryHipThigh;
-    private boolean injuryKneeLowerleg;
+    private boolean injuryHip;
+    private boolean injuryThigh;
+    private boolean injuryKnee;
+    private boolean injuryLowerleg;
     private boolean injuryNeck;
-    private boolean injuryShoulderUpperarm;
-    private boolean injuryWristHand;
+    private boolean injuryShoulder;
+    private boolean injuryUpperarm;
+    private boolean injuryWrist;
+    private boolean injuryHand;
     private boolean forkliftInvolved;
     private String forkliftOperatorFirstName;
     private String forkliftOperatorLastName;
@@ -42,7 +50,6 @@ public class EmployeeIncidentSubmitRequestModel {
     private boolean injuryLocationOnBodyMoreThanOnce;
     private String dateOfPreviousInjury;
     private String nameOfPreviousSupervisorForPreviousInjury;
-    private String typeOfInjury;
 
     public String getTypeOfIncident() {
         return typeOfIncident;
@@ -220,92 +227,12 @@ public class EmployeeIncidentSubmitRequestModel {
         this.nameOfPreviousSupervisorForPreviousInjury = nameOfPreviousSupervisorForPreviousInjury;
     }
 
-    public String getTypeOfInjury() {
-        return typeOfInjury;
-    }
-
-    public void setTypeOfInjury(String typeOfInjury) {
-        this.typeOfInjury = typeOfInjury;
-    }
-
     public String getEmployeeLastName() {
         return employeeLastName;
     }
 
     public void setEmployeeLastName(String employeeLastName) {
         this.employeeLastName = employeeLastName;
-    }
-
-    public boolean isInjuryAbdomenLowerbackLumbarPelvis() {
-        return injuryAbdomenLowerbackLumbarPelvis;
-    }
-
-    public void setInjuryAbdomenLowerbackLumbarPelvis(boolean injuryAbdomenLowerbackLumbarPelvis) {
-        this.injuryAbdomenLowerbackLumbarPelvis = injuryAbdomenLowerbackLumbarPelvis;
-    }
-
-    public boolean isInjuryHead() {
-        return injuryHead;
-    }
-
-    public void setInjuryHead(boolean injuryHead) {
-        this.injuryHead = injuryHead;
-    }
-
-    public boolean isInjuryAnkleFoot() {
-        return injuryAnkleFoot;
-    }
-
-    public void setInjuryAnkleFoot(boolean injuryAnkleFoot) {
-        this.injuryAnkleFoot = injuryAnkleFoot;
-    }
-
-    public boolean isInjuryChest() {
-        return injuryChest;
-    }
-
-    public void setInjuryChest(boolean injuryChest) {
-        this.injuryChest = injuryChest;
-    }
-
-    public boolean isInjuryHipThigh() {
-        return injuryHipThigh;
-    }
-
-    public void setInjuryHipThigh(boolean injuryHipThigh) {
-        this.injuryHipThigh = injuryHipThigh;
-    }
-
-    public boolean isInjuryKneeLowerleg() {
-        return injuryKneeLowerleg;
-    }
-
-    public void setInjuryKneeLowerleg(boolean injuryKneeLowerleg) {
-        this.injuryKneeLowerleg = injuryKneeLowerleg;
-    }
-
-    public boolean isInjuryNeck() {
-        return injuryNeck;
-    }
-
-    public void setInjuryNeck(boolean injuryNeck) {
-        this.injuryNeck = injuryNeck;
-    }
-
-    public boolean isInjuryShoulderUpperarm() {
-        return injuryShoulderUpperarm;
-    }
-
-    public void setInjuryShoulderUpperarm(boolean injuryShoulderUpperarm) {
-        this.injuryShoulderUpperarm = injuryShoulderUpperarm;
-    }
-
-    public boolean isInjuryWristHand() {
-        return injuryWristHand;
-    }
-
-    public void setInjuryWristHand(boolean injuryWristHand) {
-        this.injuryWristHand = injuryWristHand;
     }
 
     public boolean isForkliftInvolved() {

@@ -1,6 +1,6 @@
 package com.powerliftsafesolution.appaid.ws.shared.dto;
 
-public class EmployeeIncidentReportDTO {
+public class EmployeeIncidentReportDto {
 
     private String id;
     private String typeOfIncident;
@@ -40,7 +40,6 @@ public class EmployeeIncidentReportDTO {
     private boolean injuryLocationOnBodyMoreThanOnce;
     private String dateOfPreviousInjury;
     private String nameOfPreviousSupervisorForPreviousInjury;
-    private String typeOfInjury;
 
     public String getTypeOfIncident() {
         return typeOfIncident;
@@ -224,14 +223,6 @@ public class EmployeeIncidentReportDTO {
 
     public void setNameOfPreviousSupervisorForPreviousInjury(String nameOfPreviousSupervisorForPreviousInjury) {
         this.nameOfPreviousSupervisorForPreviousInjury = nameOfPreviousSupervisorForPreviousInjury;
-    }
-
-    public String getTypeOfInjury() {
-        return typeOfInjury;
-    }
-
-    public void setTypeOfInjury(String typeOfInjury) {
-        this.typeOfInjury = typeOfInjury;
     }
 
     public String getEmployeeLastName() {

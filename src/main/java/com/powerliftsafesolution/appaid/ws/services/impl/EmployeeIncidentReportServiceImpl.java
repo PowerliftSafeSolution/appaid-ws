@@ -1,12 +1,12 @@
 package com.powerliftsafesolution.appaid.ws.services.impl;
 
 import com.powerliftsafesolution.appaid.ws.exceptions.NoRecordFoundException;
-import com.powerliftsafesolution.appaid.ws.io.hibernate.dao.EmployeeIncidentReportStatisticDAO;
+import com.powerliftsafesolution.appaid.ws.io.hibernate.dao.EmployeeIncidentReportStatisticDao;
 import com.powerliftsafesolution.appaid.ws.io.hibernate.entity.EmployeeIncidentReportStatisticEntity;
-import com.powerliftsafesolution.appaid.ws.io.morphia.dao.EmployeeIncidentReportDAO;
+import com.powerliftsafesolution.appaid.ws.io.morphia.dao.EmployeeIncidentReportDao;
 import com.powerliftsafesolution.appaid.ws.io.morphia.entity.EmployeeIncidentReportEntity;
 import com.powerliftsafesolution.appaid.ws.services.EmployeeIncidentReportService;
-import com.powerliftsafesolution.appaid.ws.shared.dto.EmployeeIncidentReportDTO;
+import com.powerliftsafesolution.appaid.ws.shared.dto.EmployeeIncidentReportDto;
 import com.powerliftsafesolution.appaid.ws.ui.models.response.ErrorMessages;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,23 +23,23 @@ import java.sql.Time;
 public class EmployeeIncidentReportServiceImpl implements EmployeeIncidentReportService {
 
     @Autowired
-    private EmployeeIncidentReportDAO employeeIncidentReportDAO;
+    private EmployeeIncidentReportDao employeeIncidentReportDAO;
 
     @Autowired
-    private EmployeeIncidentReportStatisticDAO employeeIncidentReportStatisticDAO;
+    private EmployeeIncidentReportStatisticDao employeeIncidentReportStatisticDAO;
 
     public EmployeeIncidentReportServiceImpl(){
     }
 
     @Override
     @Transactional
-    public EmployeeIncidentReportDTO saveReport(EmployeeIncidentReportDTO employeeIncidentReportDTO) {
+    public EmployeeIncidentReportDto saveReport(EmployeeIncidentReportDto employeeIncidentReportDTO) {
 
         EmployeeIncidentReportEntity newReport = new EmployeeIncidentReportEntity();
         BeanUtils.copyProperties(employeeIncidentReportDTO, newReport);
 
         employeeIncidentReportDAO.save(newReport);
-        EmployeeIncidentReportDTO returnValue = new EmployeeIncidentReportDTO();
+        EmployeeIncidentReportDto returnValue = new EmployeeIncidentReportDto();
 
         EmployeeIncidentReportStatisticEntity newStatistic = new EmployeeIncidentReportStatisticEntity();
         BeanUtils.copyProperties(newReport, newStatistic);
@@ -54,9 +54,9 @@ public class EmployeeIncidentReportServiceImpl implements EmployeeIncidentReport
     }
 
     @Override
-    public EmployeeIncidentReportDTO getReportByNameDateTime(String employeeFirstName, String employeeLastName,
+    public EmployeeIncidentReportDto getReportByNameDateTime(String employeeFirstName, String employeeLastName,
                                                              String date, String time) {
-        EmployeeIncidentReportDTO returnValue =
+        EmployeeIncidentReportDto returnValue =
                 employeeIncidentReportDAO.getByNameDateTime(employeeFirstName, employeeLastName, date, time);
 
         if(returnValue == null){

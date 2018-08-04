@@ -1,7 +1,7 @@
 package com.powerliftsafesolution.appaid.ws.io;
 
-import com.powerliftsafesolution.appaid.ws.io.morphia.entity.UserEntity;
-import com.powerliftsafesolution.appaid.ws.shared.dto.UserDTO;
+import com.powerliftsafesolution.appaid.ws.io.morphia.entity.EmployeeEntity;
+import com.powerliftsafesolution.appaid.ws.shared.dto.EmployeeDto;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Component;
 
@@ -11,15 +11,15 @@ import java.util.List;
 @Component
 public class IOUtils {
 
-    public List<UserDTO> copyToUserDTOList(List<UserEntity> userEntities){
-        List<UserDTO> userDTOS = new ArrayList<UserDTO>();
+    public List<EmployeeDto> copyToUserDTOList(List<EmployeeEntity> userEntities){
+        List<EmployeeDto> employeeDtos = new ArrayList<EmployeeDto>();
 
-        for(UserEntity userEntity: userEntities){
-            UserDTO userDTO = new UserDTO();
-            BeanUtils.copyProperties(userEntity, userDTO);
-            userDTOS.add(userDTO);
+        for(EmployeeEntity employeeEntity : userEntities){
+            EmployeeDto employeeDTO = new EmployeeDto();
+            BeanUtils.copyProperties(employeeEntity, employeeDTO);
+            employeeDtos.add(employeeDTO);
         }
 
-        return  userDTOS;
+        return employeeDtos;
     }
 }

@@ -44,7 +44,6 @@ public class EmployeeIncidentReportResponseModel {
     private boolean injuryLocationOnBodyMoreThanOnce;
     private String dateOfPreviousInjury;
     private String nameOfPreviousSupervisorForPreviousInjury;
-    private String typeOfInjury;
 
     public String getTypeOfIncident() {
         return typeOfIncident;
@@ -220,14 +219,6 @@ public class EmployeeIncidentReportResponseModel {
 
     public void setNameOfPreviousSupervisorForPreviousInjury(String nameOfPreviousSupervisorForPreviousInjury) {
         this.nameOfPreviousSupervisorForPreviousInjury = nameOfPreviousSupervisorForPreviousInjury;
-    }
-
-    public String getTypeOfInjury() {
-        return typeOfInjury;
-    }
-
-    public void setTypeOfInjury(String typeOfInjury) {
-        this.typeOfInjury = typeOfInjury;
     }
 
     public String getId() {

@@ -1,19 +1,16 @@
 package com.powerliftsafesolution.appaid.ws.io.hibernate.dao.impl;
 
-import com.powerliftsafesolution.appaid.ws.io.hibernate.dao.EmployeeIncidentReportStatisticDAO;
+import com.powerliftsafesolution.appaid.ws.io.hibernate.dao.EmployeeIncidentReportStatisticDao;
 import com.powerliftsafesolution.appaid.ws.io.hibernate.entity.EmployeeIncidentReportStatisticEntity;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import javax.persistence.criteria.CriteriaBuilder;
-import javax.persistence.criteria.CriteriaQuery;
-import javax.persistence.criteria.Root;
 import java.util.Map;
 
 @Repository
-public class EmployeeIncidentReportStatisticDAOImpl implements EmployeeIncidentReportStatisticDAO {
+public class EmployeeIncidentReportStatisticDaoImpl implements EmployeeIncidentReportStatisticDao {
 
     @Autowired
     private SessionFactory sessionFactory;

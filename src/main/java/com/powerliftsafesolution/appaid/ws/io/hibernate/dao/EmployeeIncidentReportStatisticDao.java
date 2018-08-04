@@ -5,7 +5,7 @@ import com.powerliftsafesolution.appaid.ws.io.hibernate.entity.EmployeeIncidentR
 import java.sql.Date;
 import java.util.Map;
 
-public interface EmployeeIncidentReportStatisticDAO {
+public interface EmployeeIncidentReportStatisticDao {
 
     String save(EmployeeIncidentReportStatisticEntity employeeIncidentReportStatisticEntity);
     void update(String id, EmployeeIncidentReportStatisticEntity employeeIncidentReportStatisticEntity);

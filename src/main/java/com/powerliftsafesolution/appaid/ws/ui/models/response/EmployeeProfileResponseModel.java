@@ -3,7 +3,7 @@ package com.powerliftsafesolution.appaid.ws.ui.models.response;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
-public class UserProfileResponseModel {
+public class EmployeeProfileResponseModel {
 
     private String firstName;
     private String lastName;

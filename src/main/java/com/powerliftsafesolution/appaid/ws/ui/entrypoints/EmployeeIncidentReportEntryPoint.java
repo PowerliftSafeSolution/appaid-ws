@@ -1,8 +1,7 @@
 package com.powerliftsafesolution.appaid.ws.ui.entrypoints;
 
 import com.powerliftsafesolution.appaid.ws.services.EmployeeIncidentReportService;
-import com.powerliftsafesolution.appaid.ws.services.impl.EmployeeIncidentReportServiceImpl;
-import com.powerliftsafesolution.appaid.ws.shared.dto.EmployeeIncidentReportDTO;
+import com.powerliftsafesolution.appaid.ws.shared.dto.EmployeeIncidentReportDto;
 import com.powerliftsafesolution.appaid.ws.ui.models.request.EmployeeIncidentSubmitRequestModel;
 import com.powerliftsafesolution.appaid.ws.ui.models.response.EmployeeIncidentReportResponseModel;
 import com.powerliftsafesolution.appaid.ws.ui.models.response.EmployeeIncidentSubmissionSuccessResponseModel;
@@ -25,10 +24,10 @@ public class EmployeeIncidentReportEntryPoint {
         EmployeeIncidentSubmissionSuccessResponseModel returnValue = new
                 EmployeeIncidentSubmissionSuccessResponseModel();
 
-        EmployeeIncidentReportDTO reportDTO = new EmployeeIncidentReportDTO();
+        EmployeeIncidentReportDto reportDTO = new EmployeeIncidentReportDto();
         BeanUtils.copyProperties(form, reportDTO);
 
-        EmployeeIncidentReportDTO responseDto = this.employeeIncidentReportService.saveReport(reportDTO);
+        EmployeeIncidentReportDto responseDto = this.employeeIncidentReportService.saveReport(reportDTO);
 
         BeanUtils.copyProperties(responseDto, returnValue);
         returnValue.setStatus("Successful");
@@ -45,7 +44,7 @@ public class EmployeeIncidentReportEntryPoint {
 
         EmployeeIncidentReportResponseModel returnValue = new EmployeeIncidentReportResponseModel();
 
-        EmployeeIncidentReportDTO requestedReport = this.employeeIncidentReportService.getReportByNameDateTime(firstName,
+        EmployeeIncidentReportDto requestedReport = this.employeeIncidentReportService.getReportByNameDateTime(firstName,
                 lastName, date, time);
 
         BeanUtils.copyProperties(requestedReport, returnValue);
