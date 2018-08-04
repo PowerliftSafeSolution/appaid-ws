@@ -1,4 +1,9 @@
 package com.powerliftsafesolution.appaid.ws.io.s3.dao;
 
-public class powerliftBucketDao {
+import java.net.URL;
+
+public interface BucketDao {
+
+    URL uploadObject(String objectKey);
+    URL downloadObject(String objectKey);
 }

@@ -11,18 +11,18 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class UsersServiceImpl implements EmployeeService {
+public class EmployeeServiceImpl implements EmployeeService {
 
     @Autowired
     private EmployeeDao employeeDAO;
 
-    public UsersServiceImpl(){
+    public EmployeeServiceImpl(){
     }
 
     @Override
-    public EmployeeDto getEmployeeByEmployeeId(String userId) {
+    public EmployeeDto getEmployeeByEmployeeId(int userId) {
 
-        EmployeeDto returnValue = this.employeeDAO.getByUserId(userId);
+        EmployeeDto returnValue = this.employeeDAO.getByEmployeeId(userId);
 
         if(returnValue == null){
             throw new NoRecordFoundException(ErrorMessages.NO_RECORD_FOUND.name());
@@ -30,18 +30,6 @@ public class UsersServiceImpl implements EmployeeService {
 
         return returnValue;
 
-    }
-
-    @Override
-    public EmployeeDto getUserByUserName(String userName) {
-
-        EmployeeDto returnValue = this.employeeDAO.getByUserName(userName);
-
-        if(returnValue == null){
-            throw new NoRecordFoundException(ErrorMessages.NO_RECORD_FOUND.name());
-        }
-
-        return returnValue;
     }
 
     @Override
@@ -56,17 +44,6 @@ public class UsersServiceImpl implements EmployeeService {
         return returnValue;
     }
 
-    @Override
-    public EmployeeDto getUserByEmployeeID(int employeeId){
-
-        EmployeeDto returnValue = this.employeeDAO.getByEmployeeId(employeeId);
-
-        if(returnValue == null){
-            throw new NoRecordFoundException(ErrorMessages.NO_RECORD_FOUND.name());
-        }
-
-        return returnValue;
-    }
 
     @Override
     public List<EmployeeDto> getUsersByRole(String role) {
